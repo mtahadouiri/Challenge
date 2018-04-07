@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">NITDAY</string>
+    <string name="title_home">Municipalités</string>
+    <string name="title_dashboard">Fourriere</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
