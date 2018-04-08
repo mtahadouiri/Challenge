@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -58,6 +59,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import pl.aprilapps.easyphotopicker.DefaultCallback;
 import pl.aprilapps.easyphotopicker.EasyImage;
@@ -182,7 +184,9 @@ public class DeposerPlainte extends AppCompatActivity implements OnMapReadyCallb
             public void onImagePicked(File imageFile, EasyImage.ImageSource source, int type) {
                 Log.d("Image", imageFile.getAbsolutePath());
                 //AddTicket(imageFile, txtDesc.getText().toString(), position);
-                saveProfileAccount(imageFile,SERVER_ADDRESS+"ticket/add","5ac9835ab13d400410737fb5");
+                SharedPreferences settings = DeposerPlainte.this.getSharedPreferences("USER", 0);
+
+                saveProfileAccount(imageFile,SERVER_ADDRESS+"ticket/add",settings.getString("_id",null));
             }
 
 
@@ -340,7 +344,10 @@ public class DeposerPlainte extends AppCompatActivity implements OnMapReadyCallb
                 Map<String, DataPart> params = new HashMap<>();
                 // file name could found file base or direct access from real path
                 // for now just get bitmap data from ImageView
-                params.put("picture", new DataPart("file_avatar.jpg",getFileDataFromDrawable(getBaseContext(), Drawable.createFromPath(f.getAbsolutePath())), "image/jpeg"));
+                Random rand = new Random();
+
+                int  n = rand.nextInt(999999) + 1;
+                params.put("picture", new DataPart(n+"file_avatar.jpg",getFileDataFromDrawable(getBaseContext(), Drawable.createFromPath(f.getAbsolutePath())), "image/jpeg"));
 
                 return params;
             }

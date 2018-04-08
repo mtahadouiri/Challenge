@@ -508,13 +508,13 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Googl
                 builder.setPositiveButton(R.string.call, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Call
-                        CallNumber("58583352");
+                        CallNumber(marker.getTag().toString());
                     }
                 });
                 builder.setNegativeButton(R.string.text, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // Text
-                        TextNumber("5858335");
+                        TextNumber(marker.getTag().toString());
                     }
                 });
                 builder.setNeutralButton(R.string.cancel, new DialogInterface.OnClickListener() {

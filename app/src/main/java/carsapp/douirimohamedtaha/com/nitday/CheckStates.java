@@ -1,6 +1,7 @@
 package carsapp.douirimohamedtaha.com.nitday;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -51,7 +52,8 @@ public class CheckStates extends AppCompatActivity {
         rv.setItemAnimator(new DefaultItemAnimator());
         adapter=new StatAdapter(taskList,this);
         rv.setAdapter(adapter);
-        checkCarr("5ac9835ab13d400410737fb5");
+        SharedPreferences settings = CheckStates.this.getSharedPreferences("USER", 0);
+        checkCarr(settings.getString("_id",null));
     }
 
     public void GetMyTickets(String s){
@@ -186,7 +188,7 @@ public class CheckStates extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("utilisateur", "5ac9835ab13d400410737fb5");
+                params.put("utilisateur", s);
                 return params;
             }
 
