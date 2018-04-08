@@ -20,16 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
 
-    <com.nightonke.boommenu.BoomMenuButton
-        android:id="@+id/bmb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:bmb_buttonEnum="ham"
-        app:bmb_buttonPlaceEnum="buttonPlace_ham_3"
-        app:bmb_piecePlaceEnum="piecePlace_ham_3"
-        app:layout_constraintBottom_toBottomOf="@+id/map"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/map" />
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
@@ -40,6 +30,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigationagent" />
 
 </android.support.constraint.ConstraintLayout>

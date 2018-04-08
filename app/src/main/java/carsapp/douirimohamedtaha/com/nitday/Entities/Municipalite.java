@@ -1,11 +1,7 @@
 package carsapp.douirimohamedtaha.com.nitday.Entities;
 
-/**
- * Created by PC on 07/04/2018.
- */
-enum EstabType{
-    Municipalite,Fourriere
-}
+import carsapp.douirimohamedtaha.com.nitday.Entities.Enum.EstabType;
+
 public class Municipalite {
 
     private String name;
@@ -13,16 +9,15 @@ public class Municipalite {
     private double lat;
     private double longi;
     private EstabType type;
+    private int number;
+    private String mail;
+    private String heureFin;
+    private String heureDebut;
+    private String tarif;
+    private int capacite;
+
 
     public Municipalite() {
-    }
-
-    public Municipalite(String name, String address, double lat, double longi, EstabType type) {
-        this.name = name;
-        this.address = address;
-        this.lat = lat;
-        this.longi = longi;
-        this.type = type;
     }
 
     public String getName() {
@@ -65,6 +60,54 @@ public class Municipalite {
         this.type = type;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setHeureFin(String heureFin) {
+        this.heureFin = heureFin;
+    }
+
+    public String getHeureFin() {
+        return heureFin;
+    }
+
+    public String getHeureDebut() {
+        return heureDebut;
+    }
+
+    public void setHeureDebut(String heureDebut) {
+        this.heureDebut = heureDebut;
+    }
+
+    public String getTarif() {
+        return tarif;
+    }
+
+    public void setTarif(String tarif) {
+        this.tarif = tarif;
+    }
+
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public void setCapacite(int capacite) {
+        this.capacite = capacite;
+    }
+
     @Override
     public String toString() {
         return "Municipalite{" +
@@ -73,6 +116,12 @@ public class Municipalite {
                 ", lat=" + lat +
                 ", longi=" + longi +
                 ", type=" + type +
+                ", number=" + number +
+                ", mail='" + mail + '\'' +
+                ", heureFin='" + heureFin + '\'' +
+                ", heureDebut='" + heureDebut + '\'' +
+                ", tarif='" + tarif + '\'' +
+                ", capacite=" + capacite +
                 '}';
     }
 }

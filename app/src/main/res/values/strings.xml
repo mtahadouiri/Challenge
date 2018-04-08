@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">NITDAY</string>
-    <string name="title_home">Municipalités</string>
-    <string name="title_dashboard">Fourriere</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_munici">Municipalités</string>
+    <string name="title_fourriere">Fourriere</string>
+    <string name="title_parking">Parking</string>
+    <string name="ham_deposer">Deposer plainte</string>
+    <string name="ham_deposer_sub">Déposer une plainte qui sera traiter par un agent de municipalité</string>
+    <string name="ham_checkcar">Check car</string>
+    <string name="ham_checkcar_sub">Check if your car is in a fourriere</string>
+    <string name="ham_checkstate">Check state</string>
+    <string name="ham_checkstate_sub">Check state of your demand</string>
+    <string name="contact">Contacter</string>
+    <string name="call">Call</string>
+    <string name="cancel">Cancel</string>
+    <string name="text">SMS</string>
+    <string name="check">Check</string>
+    <string name="title_open_tickets">Tickets</string>
+    <string name="title_my_Tickets">My Tickets</string>
+    <string name="take_care">Handle</string>
 </resources>
