@@ -332,7 +332,7 @@ public class DeposerPlainte extends AppCompatActivity implements OnMapReadyCallb
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("lat",position.latitude+"");
-                params.put("long",position.latitude+"");
+                params.put("long",position.longitude+"");
                 params.put("description",txtDesc.getText().toString());
                 params.put("etat","0");
                 params.put("utilisateur",id);

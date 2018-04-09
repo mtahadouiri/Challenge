@@ -135,7 +135,7 @@ public class CheckStates extends AppCompatActivity {
         // Tag used to cancel the request
         RequestQueue queue = Volley.newRequestQueue(CheckStates.this);
         StringRequest strReq = new StringRequest(Request.Method.POST,
-                "http://192.168.1.211:8081/ticket/mytickets", response -> {
+                "http://10.13.0.64:8081/ticket/mytickets", response -> {
             Log.d("ResOngoing",response);
             // Display the first 500 characters of the response string.
             JSONArray task_array = null;

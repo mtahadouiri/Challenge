@@ -189,7 +189,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void registerUser(final String firstname, final String lastname, final String birthdate, final String cin, final String email, final String gender, final String password) {
         // Tag used to cancel the request
         RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-        StringRequest strReq = new StringRequest(Request.Method.POST, "http://192.168.1.211:8081/user/register", new Response.Listener<String>() {
+        StringRequest strReq = new StringRequest(Request.Method.POST, "http://10.13.0.64:8081/user/register", new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {

@@ -57,7 +57,7 @@ import carsapp.douirimohamedtaha.com.nitday.Entities.Enum.EstabType;
 import carsapp.douirimohamedtaha.com.nitday.Entities.Municipalite;
 
 public class Home extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
-    public static final String SERVER_ADDRESS = "http://192.168.1.211:8081/";
+    public static final String SERVER_ADDRESS = "http://10.13.0.64:8081/";
     GoogleMap mMap;
     private boolean perGranted;
     private boolean mapReady = false;
@@ -200,8 +200,8 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Googl
                 String adresse = fourriere.getString("adresse");
                 double lat = fourriere.getDouble("lat");
                 double longi = fourriere.getDouble("long");
-                String heureDebut = fourriere.getString("heureDebut");
-                String heureFin = fourriere.getString("heureFin");
+                //String heureDebut = fourriere.getString("heureDebut");
+                //String heureFin = fourriere.getString("heureFin");
                 mMap.clear();
                 Marker m = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(lat, longi))
@@ -218,7 +218,7 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Googl
                 e.printStackTrace();
                 progress.dismiss();
                 Toast.makeText(getApplicationContext(),
-                        " ERROR : Car not found !", Toast.LENGTH_LONG).show();
+                        "Car not found !", Toast.LENGTH_LONG).show();
 
             }
 
@@ -331,8 +331,8 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Googl
                             parking.setNumber(obj.getInt("tel"));
                             parking.setLat((float) obj.getDouble("lat"));
                             parking.setLongi((float) obj.getDouble("long"));
-                            parking.setHeureDebut(obj.getString("heureDebut"));
-                            parking.setHeureFin(obj.getString("heureFin"));
+                            parking.setHeureDebut("08:00");
+                            parking.setHeureFin("18:00");
                             parking.setType(EstabType.Parking);
                             parking.setAddress(obj.getString("adresse"));
                             parking.setTarif(obj.getString("tarif"));
@@ -437,8 +437,8 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Googl
                                 parking.setNumber(obj.getInt("tel"));
                                 parking.setLat((float) obj.getDouble("lat"));
                                 parking.setLongi((float) obj.getDouble("long"));
-                                parking.setHeureDebut(obj.getString("heureDebut"));
-                                parking.setHeureFin(obj.getString("heureFin"));
+                                parking.setHeureDebut("08:00");
+                                parking.setHeureFin("18:00");
                                 parking.setType(EstabType.Fourriere);
                                 parking.setAddress(obj.getString("adresse"));
                                 parking.setTarif("");

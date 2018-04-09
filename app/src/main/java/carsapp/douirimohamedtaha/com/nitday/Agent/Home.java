@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.request.JsonArrayRequest;
 import com.android.volley.request.JsonObjectRequest;
 import com.android.volley.request.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -112,17 +113,14 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Googl
     }
 
     private void checkOnHold() {
-        String url = SERVER_ADDRESS + "parking";
         RequestQueue queue = Volley.newRequestQueue(Home.this);
         JsonObjectRequest strReq = new JsonObjectRequest(Request.Method.GET,
                 "http://192.168.1.211:8081/ticket", null, response -> {
-            Log.d("ResOngoing", response.toString());
-            // Display the first 500 characters of the response string.
-            JSONArray task_array = null;
             try {
+                Log.d("res",""+response.toString());
 
-                task_array = response.getJSONArray("tickets");
-                taskList = new ArrayList<>();
+                JSONArray task_array = response.getJSONArray("tickets");
+                Log.d("task array length",""+task_array.length());
 
                 for (int i = 0; i < task_array.length(); i++) {
 
@@ -170,7 +168,7 @@ public class Home extends AppCompatActivity implements OnMapReadyCallback, Googl
 
         String url = SERVER_ADDRESS + "parking";
         RequestQueue queue = Volley.newRequestQueue(Home.this);
-        JsonObjectRequest strReq = new JsonObjectRequest(Request.Method.POST,
+        JsonArrayRequest strReq = new JsonArrayRequest(Request.Method.POST,
                 "http://192.168.1.211:8081/ticket/agenttickets", null, response -> {
             Log.d("ResOngoing", response.toString());
             // Display the first 500 characters of the response string.

@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         showDialog();
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
         StringRequest strReq = new StringRequest(Request.Method.POST,
-                "http://192.168.1.211:8081/user/authenticate", new Response.Listener<String>() {
+                "http://10.13.0.64:8081/user/authenticate", new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {

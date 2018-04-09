@@ -47,11 +47,12 @@ public class StatAdapter extends RecyclerView.Adapter<StatAdapter.ViewHolder> {
             holder.time.setTextColor(ContextCompat.getColor(mContext, R.color.green_primary));
             holder.time.setText("Traitement en cours");
 
-        } else{
+        } else {
             holder.time.setTextColor(ContextCompat.getColor(mContext, R.color.orange_primary));
             holder.time.setText("En attente");
         }
-        Picasso.get().load(IMAGE_SERVER_ADRESS+item.getPic()).into(holder.image);
+        Picasso.get().load(IMAGE_SERVER_ADRESS + item.getPic()).resize(60,140).centerCrop()
+                .into(holder.image);
 
     }
 
